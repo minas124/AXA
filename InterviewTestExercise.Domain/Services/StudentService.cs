@@ -1,28 +1,26 @@
 ﻿using InterviewTestExercise.Domain.Entities;
-using InterviewTestExercise.Domain.Interfaces.Repositories;
 using InterviewTestExercise.Domain.Interfaces.Services;
+using InterviewTestExercise.Persistance;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace InterviewTestExercise.Domain.Services
 {
     public class StudentService : IStudentService
     {
-        private readonly IRepository<Student> _repository;
+        private readonly ApplicationDbContext _dbContext;
 
-        public StudentService(IRepository<Student> repository)
+        public StudentService(ApplicationDbContext dbContext)
         {
-            _repository = repository;
+            _dbContext = dbContext;
         }
 
         public async Task<IEnumerable<Student>> GetStudentsAsync()
         {
-            return await _repository.GetAllAsync();
+            return await _dbContext.Students.ToListAsync();
         }
 
-        public Task<IEnumerable<Student>> GetAllStudentsWithGradesAsync()
-        {
-            return null;
-        }
     }
 }

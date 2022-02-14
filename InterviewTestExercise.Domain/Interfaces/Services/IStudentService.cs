@@ -7,7 +7,5 @@ namespace InterviewTestExercise.Domain.Interfaces.Services
     public interface IStudentService
     {
         Task<IEnumerable<Student>> GetStudentsAsync();
-        Task<IEnumerable<Student>> GetAllStudentsWithGradesAsync();
-
     }
 }

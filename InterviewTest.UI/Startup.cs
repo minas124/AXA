@@ -1,9 +1,6 @@
-using InterviewTestExercise.Domain.Entities;
-using InterviewTestExercise.Domain.Interfaces.Repositories;
 using InterviewTestExercise.Domain.Interfaces.Services;
 using InterviewTestExercise.Domain.Services;
 using InterviewTestExercise.Persistance;
-using InterviewTestExercise.Persistance.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -35,7 +32,6 @@ namespace InterviewTest.UI
                 ServiceLifetime.Scoped,
                 ServiceLifetime.Scoped);
 
-            services.AddScoped<IRepository<Student>, BaseRepository<Student>>();
             services.AddScoped<IStudentService, StudentService>();
 
             services.AddControllersWithViews().AddNewtonsoftJson(o => o.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
