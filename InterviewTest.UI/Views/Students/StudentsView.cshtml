@@ -1,0 +1,56 @@
+﻿@model IEnumerable<InterviewTestExercise.Domain.Entities.Student>
+
+@{
+    ViewData["Title"] = "StudentsView";
+}
+
+<h1>Index</h1>
+@if (Model == null && Model.ToList().Count == 0 )
+{
+                <th>No records in the database</th>
+}
+else
+{
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AverageGrade)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model)
+{
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AverageGrade)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdStudent">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdStudent">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdStudent">Delete</a>
+                <button asp-controller="Students" asp-action="ADD" asp-route-id="@item.IdStudent">ADD Grade</button>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+}

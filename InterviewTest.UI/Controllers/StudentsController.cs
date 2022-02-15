@@ -15,7 +15,8 @@ namespace InterviewTest.UI.Controllers
 
         public async Task<IActionResult> Index()
         {
-            return Ok(await _studentService.GetStudentsAsync());
+            
+           return Ok(await _studentService.GetStudentsAsync());
         }
     }
 }
