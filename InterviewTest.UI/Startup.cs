@@ -1,5 +1,5 @@
 using InterviewTestExercise.Domain.Interfaces.Services;
-using InterviewTestExercise.Domain.Services;
+using InterviewTestExercise.Services;
 using InterviewTestExercise.Persistance;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;

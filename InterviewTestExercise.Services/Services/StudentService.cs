@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace InterviewTestExercise.Domain.Services
+namespace InterviewTestExercise.Services
 {
     public class StudentService : IStudentService
     {

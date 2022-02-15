@@ -18,11 +18,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\InterviewTestExercise.Persistance\InterviewTestExercise.Persistance.csproj" />
+    <Folder Include="Views\Students\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\Students\" />
+    <ProjectReference Include="..\InterviewTestExercise.Services\InterviewTestExercise.Services.csproj" />
   </ItemGroup>
 
 </Project>
